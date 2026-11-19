@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paco Ma — Insurance & Data Analytics Specialist</title>
+<meta name="description" content="Business-minded and data-driven Insurance Specialist with 5 years of experience across Tier-1 carriers. Expertise in Advanced SQL, Excel modelling, and portfolio analytics." />
+<style>
+  :root{
+    --navy:#0b2545;
+    --navy-2:#13315c;
+    --blue:#1d5fa8;
+    --accent:#2f7fd1;
+    --gold:#c9a227;
+    --ink:#1f2d3d;
+    --muted:#5b6b7c;
+    --line:#e3e9f1;
+    --bg-soft:#f5f8fc;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    color:var(--ink);
+    line-height:1.65;
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* Nav */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{font-weight:700;font-size:1.05rem;color:var(--navy);letter-spacing:.3px;}
+  .brand span{color:var(--accent);}
+  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links a{color:var(--muted);font-size:.92rem;font-weight:500;transition:color .2s;}
+  .nav-links a:hover{color:var(--accent);}
+  @media(max-width:720px){.nav-links{display:none;}}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 55%,var(--blue) 130%);
+    color:var(--white);
+    padding:96px 0 88px;
+    position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;
+    background:radial-gradient(circle,rgba(47,127,209,.35),transparent 70%);
+    border-radius:50%;
+  }
+  .hero .container{position:relative;z-index:2;}
+  .eyebrow{
+    display:inline-block;font-size:.78rem;letter-spacing:2.5px;text-transform:uppercase;
+    color:#9fc4e8;border:1px solid rgba(159,196,232,.45);padding:6px 14px;border-radius:999px;
+    margin-bottom:22px;
+  }
+  .hero h1{font-size:2.7rem;font-weight:700;line-height:1.15;letter-spacing:-.5px;}
+  .hero h1 .accent{color:#7fb3e8;}
+  .hero .tagline{margin-top:16px;font-size:1.15rem;color:#cfe0f2;max-width:640px;}
+  .hero-contact{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px 26px;font-size:.95rem;color:#dbe8f5;}
+  .hero-contact a{color:#dbe8f5;}
+  .hero-contact svg{vertical-align:-3px;margin-right:7px;fill:#9fc4e8;}
+
+  /* Sections */
+  section{padding:76px 0;}
+  .section-label{
+    font-size:.78rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);
+    font-weight:600;margin-bottom:8px;
+  }
+  h2{font-size:1.9rem;font-weight:700;color:var(--navy);letter-spacing:-.4px;margin-bottom:14px;}
+  .lead{color:var(--muted);max-width:760px;margin-bottom:36px;}
+  .bg-soft{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+  /* Summary cards */
+  .summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px;}
+  @media(max-width:860px){.summary-grid{grid-template-columns:1fr;}}
+  .stat-card{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px 24px;
+    box-shadow:0 1px 2px rgba(11,37,69,.04);
+  }
+  .stat-card .num{font-size:2.1rem;font-weight:700;color:var(--blue);}
+  .stat-card .lbl{font-size:.9rem;color:var(--muted);margin-top:6px;}
+
+  /* Timeline */
+  .timeline{position:relative;margin-top:10px;padding-left:30px;}
+  .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line);}
+  .job{position:relative;margin-bottom:38px;}
+  .job:last-child{margin-bottom:0;}
+  .job::before{
+    content:"";position:absolute;left:-30px;top:6px;width:20px;height:20px;border-radius:50%;
+    background:var(--white);border:2px solid var(--accent);box-shadow:0 0 0 4px var(--bg-soft);
+  }
+  .job-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin-bottom:6px;}
+  .job-title{font-size:1.2rem;font-weight:700;color:var(--navy);}
+  .job-co{color:var(--blue);font-weight:600;}
+  .job-date{margin-left:auto;font-size:.85rem;color:var(--muted);font-weight:500;white-space:nowrap;}
+  .job ul{list-style:none;margin-top:10px;}
+  .job li{position:relative;padding-left:20px;margin-bottom:8px;color:var(--ink);}
+  .job li::before{content:"—";position:absolute;left:0;color:var(--accent);font-weight:700;}
+
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:8px;}
+  @media(max-width:860px){.skills-grid{grid-template-columns:1fr;}}
+  .skill-card{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px;
+  }
+  .skill-card h3{font-size:1.02rem;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+  .skill-card h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+  .skill-card p{color:var(--muted);font-size:.93rem;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .chip{
+    background:var(--bg-soft);border:1px solid var(--line);color:var(--navy-2);
+    font-size:.82rem;font-weight:500;padding:5px 12px;border-radius:999px;
+  }
+
+  /* Education */
+  .edu{display:flex;flex-direction:column;gap:20px;margin-top:8px;}
+  .edu-item{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;}
+  .edu-item .inst{font-size:1.12rem;font-weight:700;color:var(--navy);}
+  .edu-item .deg{color:var(--muted);width:100%;}
+  .edu-item .date{margin-left:auto;font-size:.85rem;color:var(--muted);white-space:nowrap;}
+
+  /* Cert */
+  .cert-list{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px;}
+  @media(max-width:720px){.cert-list{grid-template-columns:1fr;}}
+  .cert{
+    background:var(--white);border:1px solid var(--line);border-left:4px solid var(--gold);
+    border-radius:12px;padding:20px 22px;
+  }
+  .cert h3{font-size:1.02rem;color:var(--navy);}
+  .cert p{color:var(--muted);font-size:.9rem;margin-top:6px;}
+
+  /* Footer / CTA */
+  .cta{background:var(--navy);color:var(--white);text-align:center;padding:72px 0;}
+  .cta h2{color:var(--white);}
+  .cta .lead{color:#cfe0f2;margin-left:auto;margin-right:auto;}
+  .btn{
+    display:inline-block;margin-top:22px;background:var(--accent);color:#fff;
+    font-weight:600;padding:13px 30px;border-radius:999px;transition:background .2s;
+  }
+  .btn:hover{background:var(--blue);}
+  footer{
+    border-top:1px solid rgba(255,255,255,.12);background:var(--navy);
+    color:#9fb6d0;text-align:center;padding:26px 0;font-size:.85rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav container">
+    <div class="brand">Paco<span>Ma</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Insurance · Data Analytics · Portfolio Strategy</span>
+    <h1>Paco Ma</h1>
+    <p class="tagline">Business-minded, data-driven Insurance Specialist with 5 years of experience across Tier-1 carriers — turning complex data into commercial strategy.</p>
+    <div class="hero-contact">
+      <span>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        +852 68906478
+      </span>
+      <a href="mailto:pacoma215@gmail.com">
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        pacoma215@gmail.com
+      </a>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        Hong Kong
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">Professional Summary</div>
+    <h2>Turning data into decisions</h2>
+    <p class="lead">
+      Business-minded and data-driven Insurance Specialist with 5 years of institutional experience across Tier-1 carriers,
+      including a strong foundational tenure at AIA International Limited. Proven expertise leveraging Advanced SQL data
+      extraction, Microsoft Access, and complex Excel modelling to analyse customer behaviour, track portfolio performance
+      metrics, and support corporate growth forecasting. Adept at collaborating across cross-functional pricing and
+      distribution channels to translate intricate statistical parameters into high-level commercial briefs and actionable
+      go-to-market strategies.
+    </p>
+    <div class="summary-grid">
+      <div class="stat-card"><div class="num">5+</div><div class="lbl">Years across Tier-1 insurers &amp; HKSAR Government</div></div>
+      <div class="stat-card"><div class="num">SQL</div><div class="lbl">Advanced data extraction &amp; pipeline automation</div></div>
+      <div class="stat-card"><div class="num">FRM</div><div class="lbl">GARP Part I cleared · IFoA Student Member</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="bg-soft">
+  <div class="container">
+    <div class="section-label">Work Experience</div>
+    <h2>Career Timeline</h2>
+    <div class="timeline">
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-title">Senior Officer, Technical Services</span>
+          <span class="job-co">Zurich Insurance (Hong Kong)</span>
+          <span class="job-date">Sept 2024 — Present</span>
+        </div>
+        <ul>
+          <li>Analyse customer behaviour and market trends by extracting and auditing large-scale behavioural data from central databases using Advanced SQL scripts to uncover hidden consumer pain points and product gaps.</li>
+          <li>Spearheaded corporate financial data diagnostics using Advanced SQL and VBA macros to overhaul data streams and automate complex forecasting pipelines, eliminating manual latency.</li>
+          <li>Translate complex database queries and portfolio analysis into clear, executive-ready presentations, commercial briefs, and actionable performance recommendations for senior management.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-title">Research Manager, C&amp;SD and IPD</span>
+          <span class="job-co">Government of the HKSAR</span>
+          <span class="job-date">May 2021 — July 2023</span>
+        </div>
+        <ul>
+          <li>Conducted comprehensive market research and economic impact analyses on insurance-related intellectual property, identifying market trends to support regulatory frameworks.</li>
+          <li>Designed surveys and utilised data visualisation tools to identify trends, supporting policy development and regulatory alignment.</li>
+          <li>Translated complex statistical trends into strategic recommendations for senior executive panels.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-title">Associate, Underwriting &amp; Case Management</span>
+          <span class="job-co">AIA International Limited</span>
+          <span class="job-date">Sept 2019 — May 2021</span>
+        </div>
+        <ul>
+          <li>Conducted research and portfolio data analytics on customer purchase patterns across distinct business blocks to evaluate premium adequacy and identify emerging customer needs.</li>
+          <li>Collaborated with distribution channels, brokers, and cross-functional committees to streamline business funnels and drive portfolio growth.</li>
+          <li>Analysed customer purchase patterns and high-value group portfolio metrics, translating technical risk structures into commercial strategies for executive sign-off.</li>
+          <li>Ran multi-scenario sensitivity test evaluations and tracked Value of New Business (VNB) performance against shifting market trends.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Technical Skills &amp; Toolchain</div>
+    <h2>Capabilities</h2>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <h3><span class="dot"></span>Data Extraction &amp; Database Management</h3>
+        <p>Advanced SQL (data retrieval, complex joins, multi-table queries), Microsoft Access, relational database structures, data auditing, and data pipeline optimisation.</p>
+        <div class="chips"><span class="chip">Advanced SQL</span><span class="chip">Microsoft Access</span><span class="chip">Relational DB</span><span class="chip">Data Auditing</span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3><span class="dot"></span>Modelling &amp; Automation</h3>
+        <p>Advanced Excel (Index/Match, Power Query, nested logic), VBA macro development, and automated workflow engineering.</p>
+        <div class="chips"><span class="chip">Excel Power Query</span><span class="chip">VBA</span><span class="chip">Index/Match</span><span class="chip">Workflow Automation</span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3><span class="dot"></span>Statistical &amp; Programming Software</h3>
+        <p>R Studio, Python (object-oriented programming concepts), and data visualisation tools.</p>
+        <div class="chips"><span class="chip">R</span><span class="chip">Python</span><span class="chip">Data Visualisation</span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3><span class="dot"></span>Commercial Portfolio Metrics</h3>
+        <p>New Business tracking (ANP/NOP), Average Ticket Size (ATS), case penetration rates, VNB monitoring, trend forecasting, and multi-scenario sensitivity analysis.</p>
+        <div class="chips"><span class="chip">ANP/NOP</span><span class="chip">ATS</span><span class="chip">VNB</span><span class="chip">Trend Forecasting</span><span class="chip">Sensitivity Analysis</span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3><span class="dot"></span>Corporate Competencies</h3>
+        <p>Cross-functional stakeholder management, distribution channel collaboration (Agency / Bancassurance support), executive commercial briefing, and product proposition structuring.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="bg-soft">
+  <div class="container">
+    <div class="section-label">Education</div>
+    <h2>Academic Background</h2>
+    <div class="edu">
+      <div class="edu-item">
+        <span class="inst">University of Warwick, UK</span>
+        <span class="date">Sept 2016 — July 2019</span>
+        <span class="deg">BSc MORSE (Hons) — Mathematics, Operational Research, Statistics and Economics</span>
+      </div>
+      <div class="edu-item">
+        <span class="inst">St. Paul's Co-educational College, Hong Kong</span>
+        <span class="date">Sept 2010 — July 2016</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-label">Professional Status</div>
+    <h2>Certifications</h2>
+    <div class="cert-list">
+      <div class="cert">
+        <h3>GARP Financial Risk Manager (FRM)</h3>
+        <p>Part I Cleared</p>
+      </div>
+      <div class="cert">
+        <h3>Institute and Faculty of Actuaries (IFoA)</h3>
+        <p>Student Member — Passed CB1, CB2, CB3, CS1, CM1</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="cta">
+  <div class="container">
+    <h2>Let's connect</h2>
+    <p class="lead">Open to insurance, actuarial, product pricing, underwriting, and data analytics roles — Hong Kong or remote.</p>
+    <a class="btn" href="mailto:pacoma215@gmail.com">Email Me</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Paco Ma · +852 68906478 · pacoma215@gmail.com</div>
+</footer>
+
+</body>
+</html>
